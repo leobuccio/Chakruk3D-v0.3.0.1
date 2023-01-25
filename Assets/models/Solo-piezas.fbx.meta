@@ -1,0 +1,255 @@
+fileFormatVersion: 2
+guid: 118c36d6460a4054594e0a28298c1cb9
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Abajo
+    100002: Alfiil
+    100004: Alfiil_2
+    100006: Alfil
+    100008: arriba
+    100010: ATRAS
+    100012: Caballo_1
+    100014: Caballo_1_2
+    100016: Caballo_2
+    100018: Caballo_2_2
+    100020: Peon
+    100022: Peon_0
+    100024: Peon_1
+    100026: Peon_1_2
+    100028: Peon_2
+    100030: Peon_2_2
+    100032: Peon_2_3
+    100034: Peon_3
+    100036: Peon_5
+    100038: Peon_5_2
+    100040: Peon_6
+    100042: Peon_6_2
+    100044: "Pir\xE1mide_1"
+    100046: "Pir\xE1mide_1_2"
+    100048: "Pir\xE1mide_5"
+    100050: "Plat\xF3nico"
+    100052: Reina
+    100054: Reina_2
+    100056: REy
+    100058: Rey
+    100060: //RootNode
+    100062: Torre_1
+    100064: Torre_1_2
+    100066: Vertice
+    400000: Abajo
+    400002: Alfiil
+    400004: Alfiil_2
+    400006: Alfil
+    400008: arriba
+    400010: ATRAS
+    400012: Caballo_1
+    400014: Caballo_1_2
+    400016: Caballo_2
+    400018: Caballo_2_2
+    400020: Peon
+    400022: Peon_0
+    400024: Peon_1
+    400026: Peon_1_2
+    400028: Peon_2
+    400030: Peon_2_2
+    400032: Peon_2_3
+    400034: Peon_3
+    400036: Peon_5
+    400038: Peon_5_2
+    400040: Peon_6
+    400042: Peon_6_2
+    400044: "Pir\xE1mide_1"
+    400046: "Pir\xE1mide_1_2"
+    400048: "Pir\xE1mide_5"
+    400050: "Plat\xF3nico"
+    400052: Reina
+    400054: Reina_2
+    400056: REy
+    400058: Rey
+    400060: //RootNode
+    400062: Torre_1
+    400064: Torre_1_2
+    400066: Vertice
+    2300000: Alfiil
+    2300002: Alfiil_2
+    2300004: Caballo_1
+    2300006: Caballo_1_2
+    2300008: Caballo_2
+    2300010: Caballo_2_2
+    2300012: Peon
+    2300014: Peon_0
+    2300016: Peon_1
+    2300018: Peon_1_2
+    2300020: Peon_2
+    2300022: Peon_2_2
+    2300024: Peon_2_3
+    2300026: Peon_3
+    2300028: Peon_5
+    2300030: Peon_5_2
+    2300032: Peon_6
+    2300034: Peon_6_2
+    2300036: "Pir\xE1mide_1"
+    2300038: "Pir\xE1mide_1_2"
+    2300040: "Pir\xE1mide_5"
+    2300042: "Plat\xF3nico"
+    2300044: Reina_2
+    2300046: Rey
+    2300048: Torre_1
+    2300050: Torre_1_2
+    3300000: Alfiil
+    3300002: Alfiil_2
+    3300004: Caballo_1
+    3300006: Caballo_1_2
+    3300008: Caballo_2
+    3300010: Caballo_2_2
+    3300012: Peon
+    3300014: Peon_0
+    3300016: Peon_1
+    3300018: Peon_1_2
+    3300020: Peon_2
+    3300022: Peon_2_2
+    3300024: Peon_2_3
+    3300026: Peon_3
+    3300028: Peon_5
+    3300030: Peon_5_2
+    3300032: Peon_6
+    3300034: Peon_6_2
+    3300036: "Pir\xE1mide_1"
+    3300038: "Pir\xE1mide_1_2"
+    3300040: "Pir\xE1mide_5"
+    3300042: "Plat\xF3nico"
+    3300044: Reina_2
+    3300046: Rey
+    3300048: Torre_1
+    3300050: Torre_1_2
+    4300000: Torre_1
+    4300002: Peon_6
+    4300004: Peon
+    4300006: Peon_1
+    4300008: Peon_2
+    4300010: Peon_3
+    4300012: Peon_5
+    4300014: Caballo_2
+    4300016: "Pir\xE1mide_1"
+    4300018: Caballo_1
+    4300020: "Pir\xE1mide_1_2"
+    4300022: Alfiil
+    4300024: "Plat\xF3nico"
+    4300026: "Pir\xE1mide_5"
+    4300028: Torre_1_2
+    4300030: Peon_6_2
+    4300032: Peon_2_2
+    4300034: Peon_1_2
+    4300036: Peon_2_3
+    4300038: Peon_5_2
+    4300040: Peon_0
+    4300042: Caballo_2_2
+    4300044: Caballo_1_2
+    4300046: Alfiil_2
+    4300048: Reina_2
+    4300050: Rey
+    9500000: //RootNode
+    10800000: Abajo
+    10800002: arriba
+    10800004: ATRAS
+    10800006: Vertice
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat
+    second: {fileID: 2100000, guid: d15fc4cba55bec34cb35f98bb18a8ec1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.4
+    second: {fileID: 2100000, guid: 68130280b60e8114e949df887ef58828, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: d93d82c5c79490a47a83efbef58f1e49, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

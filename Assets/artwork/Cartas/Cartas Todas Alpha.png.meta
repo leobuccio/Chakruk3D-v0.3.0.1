@@ -1,0 +1,452 @@
+fileFormatVersion: 2
+guid: 707a77b4fbd6b224992c3c23d444f212
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Cartas Todas Alpha_0
+  - first:
+      213: 21300002
+    second: Cartas Todas Alpha_1
+  - first:
+      213: 21300004
+    second: Cartas Todas Alpha_2
+  - first:
+      213: 21300006
+    second: Cartas Todas Alpha_3
+  - first:
+      213: 21300008
+    second: Cartas Todas Alpha_4
+  - first:
+      213: 21300010
+    second: Cartas Todas Alpha_5
+  - first:
+      213: 21300012
+    second: Cartas Todas Alpha_6
+  - first:
+      213: 21300014
+    second: Cartas Todas Alpha_7
+  - first:
+      213: 21300016
+    second: Cartas Todas Alpha_8
+  - first:
+      213: 21300018
+    second: Cartas Todas Alpha_9
+  - first:
+      213: 21300020
+    second: Cartas Todas Alpha_10
+  - first:
+      213: 21300022
+    second: Cartas Todas Alpha_11
+  - first:
+      213: 8856057867964447499
+    second: Cartas Todas Alpha_0
+  - first:
+      213: -4923749043283781041
+    second: Cartas Todas Alpha_1
+  - first:
+      213: 7554678374042777081
+    second: Cartas Todas Alpha_2
+  - first:
+      213: 4855993302027191635
+    second: Cartas Todas Alpha_3
+  - first:
+      213: -2543616736334703247
+    second: Cartas Todas Alpha_4
+  - first:
+      213: -5575015010583016687
+    second: Cartas Todas Alpha_5
+  - first:
+      213: 128382599433439885
+    second: Cartas Todas Alpha_6
+  - first:
+      213: -907897111348387447
+    second: Cartas Todas Alpha_7
+  - first:
+      213: -3119663163765601900
+    second: Cartas Todas Alpha_8
+  - first:
+      213: -6141687858320963253
+    second: Cartas Todas Alpha_9
+  - first:
+      213: -8321742442293171488
+    second: Cartas Todas Alpha_10
+  - first:
+      213: -46902151511743007
+    second: Cartas Todas Alpha_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 400
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cartas Todas Alpha_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3009.75
+        width: 749.3333
+        height: 1003.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0bf252a5b907ea70800000000000000
+      internalID: 8856057867964447499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas Todas Alpha_1
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 3009.75
+        width: 749.3333
+        height: 1003.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4a96ef05545babb0800000000000000
+      internalID: -4923749043283781041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas Todas Alpha_2
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 3009.75
+        width: 749.3333
+        height: 1003.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5352d64fb97d860800000000000000
+      internalID: 7554678374042777081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas Todas Alpha_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2006.75
+        width: 749.3333
+        height: 1003.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 355c1071e24f36340800000000000000
+      internalID: 4855993302027191635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas Todas Alpha_4
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 2006.75
+        width: 749.3333
+        height: 1003.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17518021e0243bcd0800000000000000
+      internalID: -2543616736334703247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas Todas Alpha_5
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 2006.75
+        width: 749.3333
+        height: 1003.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b8ab4b26191a2b0800000000000000
+      internalID: -5575015010583016687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas Todas Alpha_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1003.75
+        width: 749.3333
+        height: 1003.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a42924b4b18c100800000000000000
+      internalID: 128382599433439885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas Todas Alpha_7
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 1003.75
+        width: 749.3333
+        height: 1003.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 981e97133608663f0800000000000000
+      internalID: -907897111348387447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas Todas Alpha_8
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 1003.75
+        width: 749.3333
+        height: 1003.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49941e891eab4b4d0800000000000000
+      internalID: -3119663163765601900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas Todas Alpha_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.75
+        width: 749.3333
+        height: 1003.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b490373de6754caa0800000000000000
+      internalID: -6141687858320963253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas Todas Alpha_10
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 0.75
+        width: 749.3333
+        height: 1003.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eae2d6d65b338c80800000000000000
+      internalID: -8321742442293171488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas Todas Alpha_11
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 0.75
+        width: 749.3333
+        height: 1003.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e5e0ffddbe595ff0800000000000000
+      internalID: -46902151511743007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: fad70255da8af8042aa04f916a1f2153
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

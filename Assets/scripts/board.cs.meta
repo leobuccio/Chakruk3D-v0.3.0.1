@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 6063b594e61483146b22d02d788f1fb8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - MiPieza: {fileID: 100000, guid: 9e32aacb6bc509c41ae85125b514312b, type: 3}
+  - tablero: {fileID: 1069033380011616, guid: 617fe521e0b537e47be07c8d84ca4a36, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

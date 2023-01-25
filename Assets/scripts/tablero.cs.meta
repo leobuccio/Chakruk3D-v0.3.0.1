@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 29fa7acbf2bd9c2459aee904dec192c1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - piezaSostenida: {instanceID: 0}
+  - Clocks: {fileID: 1705891340317732, guid: fa580ae95072dd84990a229fdbf3b388, type: 2}
+  - King1: {fileID: 100004, guid: 63a731900146c4c49996266515653512, type: 3}
+  - King2: {fileID: 100000, guid: eecab81dbe887e14f9e35bb8f7372691, type: 3}
+  - textChakruk: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

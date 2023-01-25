@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 7ae7b1c673f5da949b65ed0ba2e19be0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - myImageCoronada: {fileID: 21300008, guid: 1c6bf0b63d6593448aab67e0a24a4cfb, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
