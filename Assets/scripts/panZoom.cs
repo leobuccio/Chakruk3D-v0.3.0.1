@@ -5,6 +5,7 @@ using UnityEngine;
 public class panZoom : MonoBehaviour
 {
     public Camera MainCamera;
+    public int zoomIncrement;
     public float zoomOutMin = 1;
     public float zoomOutMax = 8;
     public Vector3 CameraStartingPosition;
@@ -48,13 +49,14 @@ public class panZoom : MonoBehaviour
                 transform.LookAt(pieceTransform);
             }
         }
-        zoom(Input.GetAxis("Mouse ScrollWheel"));
+        zoom(Input.GetAxis("Mouse ScrollWheel") * zoomIncrement);
     }
 
     void zoom(float increment)
     {
-        MainCamera.orthographicSize = Mathf.Clamp(MainCamera.orthographicSize - increment, zoomOutMin, zoomOutMax);
+        MainCamera.fieldOfView = Mathf.Clamp(MainCamera.fieldOfView - increment, zoomOutMin, zoomOutMax);
         MainCamera.transform.localPosition = new Vector3(MainCamera.transform.localPosition.x + (touchOne.position.x - touchZero.position.x) / 2, MainCamera.transform.localPosition.y + (touchOne.position.y - touchZero.position.y) / 2, MainCamera.transform.localPosition.z);
         Debug.Log("Zoom" + increment);
+
     }
 }
