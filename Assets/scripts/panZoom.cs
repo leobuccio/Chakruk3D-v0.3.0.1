@@ -5,9 +5,9 @@ using UnityEngine;
 public class panZoom : MonoBehaviour
 {
     public Camera MainCamera;
-    public int zoomIncrement;
+    public int zoomIncrement = 10;
     public float zoomOutMin = 1;
-    public float zoomOutMax = 8;
+    public float zoomOutMax = 65;
     public Vector3 CameraStartingPosition;
     Touch touchZero, touchOne;
     public GameObject piece;
