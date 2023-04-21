@@ -10376,11 +10376,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 683450157}
+  zoomIncrement: 10
   zoomOutMin: 0.8
-  zoomOutMax: 8
+  zoomOutMax: 63
   CameraStartingPosition: {x: 0, y: 0, z: 0}
   piece: {fileID: 0}
   pieceTransform: {fileID: 0}
+  clicked: 0
 --- !u!114 &683450153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14093,11 +14095,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 926861018}
+  zoomIncrement: 10
   zoomOutMin: 0.8
   zoomOutMax: 8
   CameraStartingPosition: {x: 0, y: 0, z: 0}
   piece: {fileID: 0}
   pieceTransform: {fileID: 0}
+  clicked: 0
 --- !u!114 &926861020
 MonoBehaviour:
   m_ObjectHideFlags: 0
