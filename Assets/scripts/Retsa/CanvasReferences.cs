@@ -1,4 +1,4 @@
-﻿using Photon.Pun;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,11 +9,19 @@ public class CanvasReferences : MonoBehaviour {
     [Header("References")]
     public GameObject txtChakruk;
     public ChackTimer[] chackTimers;
+    public static bool GameIsPaused = false;
     [SerializeField] moves[] TeamCards;
     [SerializeField] Button btnReset;
     [SerializeField] Button btnSurrender;
     [SerializeField] Button btnGoToMenu;
     [SerializeField] GameObject panelDisconnected;
+
+    [SerializeField] Button btnOptions;
+    [SerializeField] Button btnContinue;
+    [SerializeField] Button btnQuit;
+    [SerializeField] GameObject panelOptions;
+
+
 
     void Awake(){
         instance = this;
@@ -36,6 +44,7 @@ public class CanvasReferences : MonoBehaviour {
         btnReset.onClick.AddListener(OnBtnResetScene);
         btnSurrender.onClick.AddListener(OnBtnSurrender);
         btnGoToMenu.onClick.AddListener(OnBtnGoToMenu);
+        btnOptions.onClick.AddListener(OnBtnOptions);
     }
 
     public void ChangeCard(Piece piece)
@@ -71,6 +80,29 @@ public class CanvasReferences : MonoBehaviour {
     {
         panelDisconnected.SetActive(true);
     }
+
+    public void OnBtnOptions()
+    {
+        panelOptions.SetActive(true);
+        btnContinue.onClick.AddListener(OnBtnContinue);
+        btnQuit.onClick.AddListener(OnBtnQuit);
+    }
+
+    public void OnBtnContinue()
+    {
+        btnContinue.onClick.RemoveListener(OnBtnContinue);
+        btnQuit.onClick.RemoveListener(OnBtnQuit);
+        panelOptions.SetActive(false);
+    }
+
+    public void OnBtnQuit()
+    {
+        Debug.Log("Quitting");
+        Application.Quit();
+    }
+    
+
+
 
 
 }
