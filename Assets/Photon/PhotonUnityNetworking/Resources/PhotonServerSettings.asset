@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AppSettings:
     AppIdRealtime: 07c726f6-061b-4a11-822b-7f061ed52c5a
+    AppIdFusion: 
     AppIdChat: 
     AppIdVoice: 
     AppVersion: 
@@ -41,6 +42,7 @@ MonoBehaviour:
   - RpcStartGame
   - RpcMovePiece
   - RpcChangeCard
+  - RpcMoverseArriva
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

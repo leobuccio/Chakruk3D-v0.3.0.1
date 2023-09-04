@@ -8,7 +8,9 @@ public class UIMainMenu : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] TextMeshProUGUI txtState;
+    [SerializeField] TMP_InputField txtServerInput;
     [SerializeField] GameObject pantallaCarga;
+
 
     private void OnEnable()
     {
@@ -34,6 +36,14 @@ public class UIMainMenu : MonoBehaviour
         txtState.text = "Searching for players...";
         MultiplayerManager.instance.JoinRandomRoom();
     }
+
+    public void StartCustomRoom() 
+    {
+        txtState.text = "creating custom Room...";
+        MultiplayerManager.instance.JoinCustomRoom(txtServerInput.text);
+    }
+
+    
 
     void OnConnectedToPhoton()
     {
