@@ -2,6 +2,7 @@ using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class CanvasReferences : MonoBehaviour {
 	public static CanvasReferences instance;
@@ -20,7 +21,6 @@ public class CanvasReferences : MonoBehaviour {
     [SerializeField] Button btnContinue;
     [SerializeField] Button btnQuit;
     [SerializeField] GameObject panelOptions;
-
 
 
     void Awake(){

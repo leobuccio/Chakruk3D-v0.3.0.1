@@ -10,8 +10,6 @@ public class MultiplayerManager : MonoBehaviourPunCallbacks
     public static MultiplayerManager instance;
     public enum Mode {Local,Online};
 
-    public bool publicMatch;
-
     [Header("Properties")]
     [SerializeField] Team localTeam;
     [SerializeField] Mode mode;
@@ -70,7 +68,7 @@ public class MultiplayerManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRandomRoom();
     }
 
-    void CreateRoom()
+    public void CreateRoom(bool publicMatch)
     {
         int randomRoomName = Random.Range(1000, 9999);
         RoomOptions roomOptions = new RoomOptions()
@@ -80,6 +78,8 @@ public class MultiplayerManager : MonoBehaviourPunCallbacks
             MaxPlayers = 2
         };
         PhotonNetwork.CreateRoom(randomRoomName.ToString(), roomOptions);
+        
+        PlayerPrefs.SetString("RoomName", randomRoomName.ToString());
         OnRoomCreated();
     }
 
@@ -101,7 +101,7 @@ public class MultiplayerManager : MonoBehaviourPunCallbacks
         base.OnJoinRandomFailed(returnCode, message);
 
         Debug.Log("No se encontraron partidas, creando partida propia");
-        CreateRoom();
+        CreateRoom(true);
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)
