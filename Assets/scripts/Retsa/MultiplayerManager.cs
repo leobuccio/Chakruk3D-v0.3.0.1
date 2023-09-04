@@ -70,6 +70,9 @@ public class MultiplayerManager : MonoBehaviourPunCallbacks
 
     public void CreateRoom(bool publicMatch)
     {
+
+        mode = Mode.Online;
+        
         int randomRoomName = Random.Range(1000, 9999);
         RoomOptions roomOptions = new RoomOptions()
         {
