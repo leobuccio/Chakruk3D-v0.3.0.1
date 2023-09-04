@@ -68,11 +68,16 @@ public class MultiplayerManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRandomRoom();
     }
 
-    public void CreateRoom(bool publicMatch)
+    public void CreateCustomRoom()
+    {
+        mode = Mode.Online;
+
+        PhotonNetwork.JoinLobby();
+    }
+
+    void CreateRoom(bool publicMatch)
     {
 
-        mode = Mode.Online;
-        
         int randomRoomName = Random.Range(1000, 9999);
         RoomOptions roomOptions = new RoomOptions()
         {
@@ -88,8 +93,8 @@ public class MultiplayerManager : MonoBehaviourPunCallbacks
 
     public void JoinCustomRoom(string code)
     {
+        mode = Mode.Online;
         PhotonNetwork.JoinRoom(code);
-        OnJoinedRoom();
     }
     
     public override void OnJoinRoomFailed(short returnCode, string message)
@@ -112,6 +117,13 @@ public class MultiplayerManager : MonoBehaviourPunCallbacks
         base.OnCreateRoomFailed(returnCode, message);
 
         Debug.Log("Error creando partida");
+    }
+
+    public override void OnJoinedLobby()
+    {
+        base.OnJoinedLobby();
+        CreateRoom(false);
+        Debug.Log("Entered Lobby");
     }
 
 

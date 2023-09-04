@@ -41,7 +41,7 @@ public class UIMainMenu : MonoBehaviour
 
         if(ChkBox_privateMatch.isOn)
         {
-            MultiplayerManager.instance.CreateRoom(false);
+            MultiplayerManager.instance.CreateCustomRoom();
             Debug.Log("creando partida privada...");
         }
         else
