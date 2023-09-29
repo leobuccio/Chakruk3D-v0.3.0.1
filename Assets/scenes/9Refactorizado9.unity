@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6093429, g: 0.6089585, b: 0.6214563, a: 1}
+  m_IndirectSpecularColor: {r: 0.6198183, g: 0.617909, b: 0.6271601, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6050,7 +6050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &336692099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11225,7 +11225,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683450150}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
@@ -11305,7 +11305,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683450150}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2aa0d826e0592984ea9be70f823a0808, type: 3}
   m_Name: 
@@ -11377,7 +11377,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 0}
+  m_BackGroundColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 1
@@ -11390,7 +11390,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 12.67
+  near clip plane: 9.08
   far clip plane: 379.6
   field of view: 52.149693
   orthographic: 0
@@ -11418,7 +11418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683450150}
   m_LocalRotation: {x: 0.28035215, y: 0.3646388, z: -0.11612565, w: 0.8803159}
-  m_LocalPosition: {x: -8.22, y: 9.36, z: -8.22}
+  m_LocalPosition: {x: -7, y: 8.66, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15551,7 +15551,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926861017}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
@@ -22935,7 +22935,7 @@ MonoBehaviour:
   yPosition: 2
   greenHighlight: {fileID: 927828815}
   redHighlight: {fileID: 1437719986}
-  coronacion: 1
+  coronacion: 0
 --- !u!65 &1273983383
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35780,7 +35780,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1942004192
 Light:
   m_ObjectHideFlags: 0
@@ -35792,7 +35792,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.09174347, b: 1, a: 1}
   m_Intensity: 1.618
   m_Range: 12
   m_SpotAngle: 113.4
