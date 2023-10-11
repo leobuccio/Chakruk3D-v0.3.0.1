@@ -11211,6 +11211,7 @@ GameObject:
   - component: {fileID: 683450153}
   - component: {fileID: 683450152}
   - component: {fileID: 683450151}
+  - component: {fileID: 683450159}
   m_Layer: 0
   m_Name: CamaraPerspective
   m_TagString: Untagged
@@ -11285,7 +11286,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683450150}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e969df52b691b54ba982de31a8bb67f, type: 3}
   m_Name: 
@@ -11425,6 +11426,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 35.33, y: 45, z: 0}
+--- !u!114 &683450159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683450150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa644e92705a9754a9143ff793e4beb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomSpeed: 1000
+  minFOV: 20
+  returnToOriginalDelay: 5
+  fovTransitionTime: 400
 --- !u!1 &685990001
 GameObject:
   m_ObjectHideFlags: 0
