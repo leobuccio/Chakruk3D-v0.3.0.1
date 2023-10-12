@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6093429, g: 0.6089585, b: 0.6214563, a: 1}
+  m_IndirectSpecularColor: {r: 0.6198183, g: 0.617909, b: 0.6271601, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4433,7 +4433,7 @@ MonoBehaviour:
   yPosition: 6
   greenHighlight: {fileID: 1241130628}
   redHighlight: {fileID: 1751609114}
-  coronacion: 0
+  coronacion: 1
 --- !u!65 &190067030
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10336,7 +10336,7 @@ MonoBehaviour:
   yPosition: 5
   greenHighlight: {fileID: 1339130455}
   redHighlight: {fileID: 791759800}
-  coronacion: 1
+  coronacion: 0
 --- !u!65 &618187646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18786,7 +18786,7 @@ MonoBehaviour:
   yPosition: 3
   greenHighlight: {fileID: 883436677}
   redHighlight: {fileID: 1682070263}
-  coronacion: 0
+  coronacion: 1
 --- !u!65 &1066443687
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23367,7 +23367,7 @@ MonoBehaviour:
   yPosition: 8
   greenHighlight: {fileID: 846319162}
   redHighlight: {fileID: 971654045}
-  coronacion: 1
+  coronacion: 0
 --- !u!65 &1298355496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27061,7 +27061,7 @@ MonoBehaviour:
   yPosition: 2
   greenHighlight: {fileID: 1602140930}
   redHighlight: {fileID: 822512818}
-  coronacion: 1
+  coronacion: 0
 --- !u!65 &1427449338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32536,7 +32536,7 @@ MonoBehaviour:
   yPosition: 5
   greenHighlight: {fileID: 1855545038}
   redHighlight: {fileID: 1997688360}
-  coronacion: 1
+  coronacion: 0
 --- !u!65 &1737569189
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39983,7 +39983,7 @@ MonoBehaviour:
   yPosition: 4
   greenHighlight: {fileID: 1376187631}
   redHighlight: {fileID: 1362114823}
-  coronacion: 0
+  coronacion: 1
 --- !u!65 &2136592318
 BoxCollider:
   m_ObjectHideFlags: 0
