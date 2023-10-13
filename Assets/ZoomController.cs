@@ -27,7 +27,7 @@ public class ZoomController : MonoBehaviour
         timeSinceZoom += Time.deltaTime;
 
         // Validación para PC o Editor
-        if (Application.isEditor || Application.platform == RuntimePlatform.WindowsPlayer)
+        if (Application.isEditor || Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WebGLPlayer)
         {
             float scrollInput = Input.GetAxis("Mouse ScrollWheel");
             ZoomWithMouse(scrollInput);
