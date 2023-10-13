@@ -7,8 +7,8 @@ public class SC_MusicHandler : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
     [SerializeField] private GameObject Audio;
+    [SerializeField] private AudioSource SceneAudio;
     [SerializeField] private float soundFactor;
-    private AudioSource SceneAudio;
 
     public void Start()
     {
