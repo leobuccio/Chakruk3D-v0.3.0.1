@@ -26,19 +26,8 @@ public class ZoomController : MonoBehaviour
     {
         timeSinceZoom += Time.deltaTime;
 
-        // Validación para PC o Editor
-        if (Application.isEditor || Application.platform == RuntimePlatform.WindowsPlayer)
-        {
-            float scrollInput = Input.GetAxis("Mouse ScrollWheel");
-            ZoomWithMouse(scrollInput);
-
-            if (scrollInput != 0f)
-            {
-                timeSinceZoom = 0f;
-            }
-        }
         // Validación para Android
-        else if (Application.platform == RuntimePlatform.Android)
+        if (Application.platform == RuntimePlatform.Android)
         {
             if (Input.touchCount == 2)
             {
@@ -54,6 +43,16 @@ public class ZoomController : MonoBehaviour
                 float zoomInput = currentMagnitude - prevMagnitude;
                 ZoomWithTouch(zoomInput);
 
+                timeSinceZoom = 0f;
+            }
+        }
+        else
+        {
+            float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+            ZoomWithMouse(scrollInput);
+
+            if (scrollInput != 0f)
+            {
                 timeSinceZoom = 0f;
             }
         }
