@@ -63,6 +63,7 @@ public class CanvasReferences : MonoBehaviour {
         if (MultiplayerManager.instance.getMode() == MultiplayerManager.Mode.Online)
         {
             PhotonNetwork.Disconnect();
+            SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
         else {
             Destroy(MultiplayerManager.instance.gameObject);
