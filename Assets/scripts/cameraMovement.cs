@@ -9,6 +9,7 @@ public class cameraMovement : MonoBehaviour
     Animator myAnim;
     public GameObject camera2D, cameraIso;
     public GameObject center;
+    [SerializeField] private panZoom _panZoom;
     public bool movingCamera;
     public float speedRotation = 5.0f;
     private Vector3 cameraOffset;
@@ -16,16 +17,14 @@ public class cameraMovement : MonoBehaviour
     public float smoothFactor = 0.5f;
     private bool goingBack;
     private Vector3 newPosition;
-    private bool isMultiTouching = false;
-    private Vector2 touchStartPos1;
-    private Vector2 touchStartPos2;
-    private Vector2 touchEndPos1;
-    private Vector2 touchEndPos2;
+    
+    bool setOneShootRotate = false;
 
     void Start()
     {
         myAnim = GetComponent<Animator>();
         cameraOffset = transform.position - center.transform.position;
+        _panZoom = GetComponent<panZoom>();
     }
 
     // Update is called once per frame
@@ -76,53 +75,40 @@ public class cameraMovement : MonoBehaviour
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            HandleTouchInput();
+            HandleAndroidInput();
         }
         else
         {
             HandlePCInput();
         }
+        transform.LookAt(center.transform);
     }
 
-    private void HandleTouchInput()
+    private void HandleAndroidInput()
     {
-        if (Input.touchCount == 2)
+        if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
-            Touch touch1 = Input.GetTouch(0);
-            Touch touch2 = Input.GetTouch(1);
+            float touchDeltaX = Input.GetTouch(0).deltaPosition.x;
+            Quaternion canTurnAngle = Quaternion.AngleAxis(touchDeltaX * speedRotation, Vector3.up);
+            cameraOffset = canTurnAngle * cameraOffset;
+            setOneShootRotate = true;
 
-            if (touch1.phase == TouchPhase.Began || touch2.phase == TouchPhase.Began)
+            newPosition = center.transform.position + cameraOffset;
+            transform.position = Vector3.Slerp(transform.position, newPosition, smoothFactor);
+        }
+        else
+        {
+            if (setOneShootRotate)
             {
-                isMultiTouching = true;
-                touchStartPos1 = touch1.position;
-                touchStartPos2 = touch2.position;
+                transform.DOMove(new Vector3(-8.22f, 9.41f, -8.22f), 1f);
+
+                setOneShootRotate = false;
             }
-            else if ((touch1.phase == TouchPhase.Moved || touch2.phase == TouchPhase.Moved) && isMultiTouching)
-            {
-                touchEndPos1 = touch1.position;
-                touchEndPos2 = touch2.position;
 
-                Vector2 delta1 = touchEndPos1 - touchStartPos1;
-                Vector2 delta2 = touchEndPos2 - touchStartPos2;
-
-                float horizontalInput = (delta1.x + delta2.x) * 0.5f * speedRotation * 0.01f;
-
-                Quaternion canTurnAngle = Quaternion.AngleAxis(horizontalInput, Vector3.up);
-                cameraOffset = canTurnAngle * cameraOffset;
-                transform.LookAt(center.transform);
-
-                newPosition = center.transform.position + cameraOffset;
-                transform.position = Vector3.Slerp(transform.position, newPosition, smoothFactor);
-
-                touchStartPos1 = touchEndPos1;
-                touchStartPos2 = touchEndPos2;
-            }
-            else if (touch1.phase == TouchPhase.Ended || touch2.phase == TouchPhase.Ended)
-            {
-                isMultiTouching = false;
-            }
+            cameraOffset = transform.position - center.transform.position;
         }
     }
+    
 
     private void HandlePCInput()
     {
@@ -136,15 +122,21 @@ public class cameraMovement : MonoBehaviour
             float mouseX = Input.GetAxis("Mouse X");
             Quaternion canTurnAngle = Quaternion.AngleAxis(mouseX * speedRotation, Vector3.up);
             cameraOffset = canTurnAngle * cameraOffset;
-            transform.LookAt(center.transform);
-
+            setOneShootRotate = true;
+            
+           
             newPosition = center.transform.position + cameraOffset;
             transform.position = Vector3.Slerp(transform.position, newPosition, smoothFactor);
         }
         else
         {
-            transform.DOMove(new Vector3(-8.22f, 9.41f, -8.22f), 1f);
-            // transform.DORotate(new Vector3(35f, 45f, 0f), 1f);
+            if(setOneShootRotate)
+            {
+                transform.DOMove(new Vector3(-8.22f, 9.41f, -8.22f), 1f);
+                
+                setOneShootRotate = false;
+            }
+            
             cameraOffset = transform.position - center.transform.position;
         }
     }

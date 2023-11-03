@@ -26,35 +26,22 @@ public class ZoomController : MonoBehaviour
     {
         timeSinceZoom += Time.deltaTime;
 
-        // Validación para Android
-        if (Application.platform == RuntimePlatform.Android)
+       
+        if (Input.touchCount == 2)
         {
-            if (Input.touchCount == 2)
-            {
-                Touch touch0 = Input.GetTouch(0);
-                Touch touch1 = Input.GetTouch(1);
+            Touch touch0 = Input.GetTouch(0);
+            Touch touch1 = Input.GetTouch(1);
 
-                Vector2 touch0PrevPos = touch0.position - touch0.deltaPosition;
-                Vector2 touch1PrevPos = touch1.position - touch1.deltaPosition;
+            Vector2 touch0PrevPos = touch0.position - touch0.deltaPosition;
+            Vector2 touch1PrevPos = touch1.position - touch1.deltaPosition;
 
-                float prevMagnitude = (touch0PrevPos - touch1PrevPos).magnitude;
-                float currentMagnitude = (touch0.position - touch1.position).magnitude;
+            float prevMagnitude = (touch0PrevPos - touch1PrevPos).magnitude;
+            float currentMagnitude = (touch0.position - touch1.position).magnitude;
 
-                float zoomInput = currentMagnitude - prevMagnitude;
-                ZoomWithTouch(zoomInput);
+            float zoomInput = currentMagnitude - prevMagnitude;
+            ZoomWithTouch(zoomInput);
 
-                timeSinceZoom = 0f;
-            }
-        }
-        else
-        {
-            float scrollInput = Input.GetAxis("Mouse ScrollWheel");
-            ZoomWithMouse(scrollInput);
-
-            if (scrollInput != 0f)
-            {
-                timeSinceZoom = 0f;
-            }
+            timeSinceZoom = 0f;
         }
 
         // Verificar si debe volver al FOV original
@@ -62,13 +49,6 @@ public class ZoomController : MonoBehaviour
         {
             ReturnToOriginalZoom();
         }
-    }
-
-    private void ZoomWithMouse(float zoomInput)
-    {
-        float newFOV = mainCamera.fieldOfView - zoomInput * zoomSpeed * Time.deltaTime;
-        newFOV = Mathf.Clamp(newFOV, minFOV, initialFOV);
-        mainCamera.fieldOfView = newFOV;
     }
 
     private void ZoomWithTouch(float zoomInput)

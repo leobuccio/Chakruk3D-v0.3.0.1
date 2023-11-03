@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6198183, g: 0.617909, b: 0.6271601, a: 1}
+  m_IndirectSpecularColor: {r: 0.6093429, g: 0.6089585, b: 0.6214563, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10750,7 +10750,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683450150}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e969df52b691b54ba982de31a8bb67f, type: 3}
   m_Name: 
@@ -10761,7 +10761,8 @@ MonoBehaviour:
   zoomOutMax: 63
   CameraStartingPosition: {x: 0, y: 0, z: 0}
   piece: {fileID: 0}
-  pieceTransform: {fileID: 0}
+  pieceTransform: {x: 0, y: 0, z: 0}
+  center: {fileID: 949034615}
   clicked: 0
 --- !u!114 &683450153
 MonoBehaviour:
@@ -10778,6 +10779,7 @@ MonoBehaviour:
   camera2D: {fileID: 1918221773}
   cameraIso: {fileID: 354385594}
   center: {fileID: 949034615}
+  _panZoom: {fileID: 0}
   movingCamera: 0
   speedRotation: 5
   smoothFactor: 0.5
@@ -10809,7 +10811,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683450150}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fcc5dfe8e4ba61409192949005edf53, type: 3}
   m_Name: 
@@ -10822,7 +10824,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683450150}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fb5bc57c3bb7594ca5abd185de17053, type: 3}
   m_Name: 
@@ -14833,7 +14835,8 @@ MonoBehaviour:
   zoomOutMax: 8
   CameraStartingPosition: {x: 0, y: 0, z: 0}
   piece: {fileID: 0}
-  pieceTransform: {fileID: 0}
+  pieceTransform: {x: 0, y: 0, z: 0}
+  center: {fileID: 0}
   clicked: 0
 --- !u!114 &926861020
 MonoBehaviour:
@@ -14850,6 +14853,7 @@ MonoBehaviour:
   camera2D: {fileID: 1918221773}
   cameraIso: {fileID: 354385594}
   center: {fileID: 949034615}
+  _panZoom: {fileID: 0}
   movingCamera: 0
   speedRotation: 5
   smoothFactor: 0.5
@@ -38229,7 +38233,7 @@ PrefabInstance:
     - target: {fileID: 1499711757579419044, guid: c5eef916a32088e40b9561f281a88132,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.3112183
+      value: -3.3112793
       objectReference: {fileID: 0}
     - target: {fileID: 1499711757579419044, guid: c5eef916a32088e40b9561f281a88132,
         type: 3}
