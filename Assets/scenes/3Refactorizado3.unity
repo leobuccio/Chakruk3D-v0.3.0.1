@@ -12653,6 +12653,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 707977673671133685, guid: bc78ebe0a93b2e74f822bff62d00595f,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 707977673671133685, guid: bc78ebe0a93b2e74f822bff62d00595f,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d67afea850094b14089e8b1e90b51677, type: 2}
