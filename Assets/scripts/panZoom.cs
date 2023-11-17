@@ -9,7 +9,9 @@ public class panZoom : MonoBehaviour
     public Vector3 CameraStartingPosition;
     Touch touchZero, touchOne;
     [HideInInspector] public GameObject piece;
-    [HideInInspector] public Transform pieceTransform;
+    [HideInInspector] public Vector3 pieceTransform;
+    [SerializeField] private GameObject center;
+    private Vector3 centerOrigin;
     public int clicked;
     private float clicktime;
     private float clickdelay = 0.5f;
@@ -21,27 +23,32 @@ public class panZoom : MonoBehaviour
         zoomOutMax = 65;
         zoomOutMin = 1;
     }
+
+    private void Start()
+    {
+        centerOrigin = center.transform.position;
+    }
     // Update is called once per frame
     public void Update()
     {
         Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         Debug.DrawRay(ray.origin, ray.direction * 100);
-        if (Input.touchCount == 2)
-        {
-            touchZero = Input.GetTouch(0);
-            touchOne = Input.GetTouch(1);
+        // if (Input.touchCount == 2)
+        // {
+        //     touchZero = Input.GetTouch(0);
+        //     touchOne = Input.GetTouch(1);
 
-            Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
-            Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+        //     Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+        //     Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
 
-            float prevMagnitude = (touchZeroPrevPos - touchOnePrevPos).magnitude;
-            float currentMagnitude = (touchZero.position - touchOne.position).magnitude;
+        //     float prevMagnitude = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+        //     float currentMagnitude = (touchZero.position - touchOne.position).magnitude;
 
-            float difference = currentMagnitude - prevMagnitude;
+        //     float difference = currentMagnitude - prevMagnitude;
 
-            //zoom(difference * 0.01f);
-        }
+        //     //zoom(difference * 0.01f);
+        // }
         if (Input.GetMouseButtonDown(0))
         {
 
@@ -49,6 +56,7 @@ public class panZoom : MonoBehaviour
             if (clicked == 1)
             {
                 clicktime = Time.time;
+
             }
             if (clicked > 1 && Time.time - clicktime < clickdelay)
             {
@@ -57,15 +65,20 @@ public class panZoom : MonoBehaviour
                 Debug.Log("Double CLick");
                 if (Physics.Raycast(ray, out hit) == true)
                 {
+                    
                     Debug.Log("choco con " + hit.transform.name);
                     piece = hit.transform.gameObject;
-                    pieceTransform = piece.transform;
-                    transform.LookAt(pieceTransform);
+                    pieceTransform = piece.transform.position;
+                    center.transform.position = new Vector3(pieceTransform.x, pieceTransform.y + .5f, pieceTransform.z);
+                    // transform.LookAt(pieceTransform);
                 }
+                
             }
             if (Time.time - clicktime > 1)
             {
                 clicked = 0;
+                // isSelecting = false;
+                // center.transform.position = centerOrigin;
             }
 
 

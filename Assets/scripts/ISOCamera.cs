@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,18 +18,11 @@ public class ISOCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!zooming)
-        {
-
-        }
-        else
+        if (zooming)
         {
             ResetZoom();
         }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            //ResetZoom();
-        }
+        
             t += Time.deltaTime;
             t = Mathf.Clamp01(t);
             transform.position = new Vector3(myOriginalPosition.x + t * (myDestinationPosition.x - myOriginalPosition.x), myOriginalPosition.y + t * (myDestinationPosition.y - myOriginalPosition.y), myOriginalPosition.z + t * (myDestinationPosition.z - myOriginalPosition.z));
