@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 public static class Util{
 
@@ -62,5 +63,37 @@ public static class Util{
         }
         return result;
     }
+
+    public static List<Checker> getBotPieces()
+    {
+        List<Checker> result = new List<Checker>();
+        foreach (var piece in CheckBoard.instance.GetComponentsInChildren<Piece>())
+        {
+            if (piece.GetTeam() != Team.Humanos)
+                continue;
+
+            if(piece.findAvailableCheckers().availableCheckers.Count > 0)
+            {
+                result.Add(piece.GetComponentInParent<Checker>());
+            }
+            
+        }
+        return result;
+
+    }
+
+    public static List<Checker> getBotMovementsByPiece(Checker _selectedChecker)
+    {
+        List<Checker> result = new List<Checker>();
+        Piece _piece = _selectedChecker.GetComponentInChildren<Piece>();
+        if(_piece != null)
+        {
+            result.AddRange(_piece.findAvailableCheckers().availableCheckers);
+        }
+
+        return result;
+    }
+
+
 
 }

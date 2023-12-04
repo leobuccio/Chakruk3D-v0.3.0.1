@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class MultiplayerManager : MonoBehaviourPunCallbacks
 {
     public static MultiplayerManager instance;
-    public enum Mode {Local,Online};
+    public enum Mode {Local,Online,Bot};
 
     [Header("Properties")]
     [SerializeField] Team localTeam;
@@ -50,6 +50,13 @@ public class MultiplayerManager : MonoBehaviourPunCallbacks
     {
         mode = Mode.Local;
         //SceneManager.LoadScene(1);
+        StartCoroutine(LoadScene(1));
+    }
+
+    public void StartBotGame()
+    {
+        mode = Mode.Bot;
+        localTeam = Team.Maquinas;
         StartCoroutine(LoadScene(1));
     }
 

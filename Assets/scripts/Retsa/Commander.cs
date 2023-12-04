@@ -6,7 +6,7 @@ public class Commander : MonoBehaviour {
 	public static Commander instance;
 
     [Header("Properties")]
-    [SerializeField]private Team currentTeam = Team.Humanos;
+    public Team currentTeam = Team.Humanos;
     [SerializeField] private float pieceSpeed = 1;
     [SerializeField] private float checkerArrivalDistance = 0.2f;
     [SerializeField] private Vector3 destinationOffset = Vector3.zero;
@@ -17,7 +17,8 @@ public class Commander : MonoBehaviour {
     private List<Checker> greenCheckers = new List<Checker>();
 	private List<Checker> redCheckers = new List<Checker>();
     private bool freezed = false;
-
+    public bool CanMove = false;
+    public bool BotHasMoved = false;
     private Coroutine rotatePieceCoroutine = null;
 
     void Awake(){
@@ -27,6 +28,7 @@ public class Commander : MonoBehaviour {
 	public void actOnChecker(Checker checker){
         if (freezed)
             return;
+        
         
         if (rotatePieceCoroutine!=null)
             StopCoroutine(rotatePieceCoroutine);
@@ -56,8 +58,17 @@ public class Commander : MonoBehaviour {
 
             if (!piece)
 				return;
-            if (!canIPickThePiece(piece))
+            if(MultiplayerManager.instance.getMode() == MultiplayerManager.Mode.Bot)
+            {
+                if (currentTeam == Team.Humanos && piece.GetTeam() == Team.Humanos && !canIPickThePiece(piece))
                 return;
+            }
+            else
+            {
+                if(!canIPickThePiece(piece))
+                return;
+            }
+            
 
             pickPiece(piece);
         }
@@ -65,11 +76,11 @@ public class Commander : MonoBehaviour {
 
     public bool canIPickThePiece(Piece piece)
     {
-        if (piece.GetTeam() != currentTeam)
-            return false;
-        else if (MultiplayerManager.instance.getMode() == MultiplayerManager.Mode.Local)
-        {
+        if (MultiplayerManager.instance.getMode() == MultiplayerManager.Mode.Local)
             return true;
+        else if (piece.GetTeam() != currentTeam)
+        {
+            return false;
         }
         else if (piece.GetTeam() == MultiplayerManager.instance.getLocalTeam())
         {
@@ -79,9 +90,10 @@ public class Commander : MonoBehaviour {
         {
             return false;
         }
-
-
     }
+
+   
+
 	
 	public void movePiece(Piece piece, Checker checker){
         
@@ -156,7 +168,15 @@ public class Commander : MonoBehaviour {
         CanvasReferences.instance.chackTimers[(int)currentTeam].SetIsRunning(false);
 
         currentTeam = Util.getOppositeTeam(currentTeam);
-
+        if(currentTeam == Team.Humanos)
+        {
+            CanMove = true;
+            BotHasMoved = false;
+        }
+        else
+        {
+            CanMove = false;
+        }
         CanvasReferences.instance.chackTimers[(int)currentTeam].SetIsRunning(true);
     }
 

@@ -25,6 +25,8 @@ public class Piece : MonoBehaviour {
         return pieceID;
     }
 
+    
+
     protected bool analyseChecker(int x, int y){
 		CheckerAvailability cAvailability = CheckBoard.instance.isCheckerAvailable(x, y, team);
         bool CheckerExists = (cAvailability != CheckerAvailability.nonExistent);

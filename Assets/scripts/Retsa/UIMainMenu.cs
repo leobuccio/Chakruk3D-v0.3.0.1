@@ -36,6 +36,10 @@ public class UIMainMenu : MonoBehaviour
         MultiplayerManager.instance.StartLocalGame();
     }
 
+    public void StartLocalBot() {
+        MultiplayerManager.instance.StartBotGame();
+    }
+
     public void StartMultiplayer() {
         txtState.text = "Searching for players...";
 
