@@ -58,18 +58,10 @@ public class Commander : MonoBehaviour {
 
             if (!piece)
 				return;
-            if(MultiplayerManager.instance.getMode() == MultiplayerManager.Mode.Bot)
-            {
-                if (currentTeam == Team.Humanos && piece.GetTeam() == Team.Humanos && !canIPickThePiece(piece))
-                return;
-            }
-            else
-            {
-                if(!canIPickThePiece(piece))
-                return;
-            }
             
-
+            if(!canIPickThePiece(piece))
+                return;
+            
             pickPiece(piece);
         }
 	}
@@ -78,11 +70,16 @@ public class Commander : MonoBehaviour {
     {
         if (MultiplayerManager.instance.getMode() == MultiplayerManager.Mode.Local)
             return true;
-        else if (piece.GetTeam() != currentTeam)
+        else if (MultiplayerManager.instance.getMode() == MultiplayerManager.Mode.Online && piece.GetTeam() != currentTeam)
         {
             return false;
         }
-        else if (piece.GetTeam() == MultiplayerManager.instance.getLocalTeam())
+        else if(MultiplayerManager.instance.getMode() == MultiplayerManager.Mode.Online && piece.GetTeam() == currentTeam)
+        {
+            return true;
+        }
+        else if (MultiplayerManager.instance.getMode() == MultiplayerManager.Mode.Bot &&
+                ((currentTeam == Team.Humanos && piece.GetTeam() == Team.Humanos) || (currentTeam == Team.Maquinas && piece.GetTeam() == Team.Maquinas)))
         {
             return true;
         }
