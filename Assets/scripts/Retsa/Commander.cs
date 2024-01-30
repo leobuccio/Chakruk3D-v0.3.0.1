@@ -37,13 +37,16 @@ public class Commander : MonoBehaviour {
             this.selectedPiece.outline.enabled = false;
         CheckBoard.instance.turnOffAllCheckers();
 
-        if (greenCheckers.Contains(checker)){
+        if (greenCheckers.Contains(checker))
+        {
             greenCheckers = new List<Checker>();
 
-            if (Util.isMoveIllegal(selectedPiece,checker)){
+            if (Util.isMoveIllegal(selectedPiece,checker))
+            {
                 showChakrukMessage();
             }
-            else{
+            else
+            {
                 movePiece(selectedPiece, checker);
 
                 if (MultiplayerManager.instance.getMode() == MultiplayerManager.Mode.Online)
@@ -52,7 +55,8 @@ public class Commander : MonoBehaviour {
                 }
             }
         }
-		else{
+		else
+        {
             Piece piece = checker.GetComponentInChildren<Piece>();
 
 
