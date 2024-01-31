@@ -19,6 +19,8 @@ public class Commander : MonoBehaviour {
     private bool freezed = false;
     public bool CanMove = false;
     public bool BotHasMoved = false;
+
+    public bool _isChakrukMate = false;
     private Coroutine rotatePieceCoroutine = null;
 
     void Awake(){
@@ -131,6 +133,7 @@ public class Commander : MonoBehaviour {
             if (isChakrukMate())
             {
                 showChakrukMateMessage();
+                _isChakrukMate = true;
             }
             else{
                 showChakrukMessage();
