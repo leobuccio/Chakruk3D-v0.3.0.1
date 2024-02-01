@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6198183, g: 0.617909, b: 0.6271601, a: 1}
+  m_IndirectSpecularColor: {r: 0.6093429, g: 0.6089585, b: 0.6214563, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6649,7 +6649,7 @@ PrefabInstance:
     - target: {fileID: 3337757497555662136, guid: 4868ea2238fd58d4cafed7bc84ecea4c,
         type: 3}
       propertyPath: m_Range
-      value: 12
+      value: 16.1
       objectReference: {fileID: 0}
     - target: {fileID: 3337757497555662136, guid: 4868ea2238fd58d4cafed7bc84ecea4c,
         type: 3}
@@ -6664,12 +6664,17 @@ PrefabInstance:
     - target: {fileID: 3337757497555662136, guid: 4868ea2238fd58d4cafed7bc84ecea4c,
         type: 3}
       propertyPath: m_SpotAngle
-      value: 90
+      value: 179
+      objectReference: {fileID: 0}
+    - target: {fileID: 3337757497555662136, guid: 4868ea2238fd58d4cafed7bc84ecea4c,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3337757497555662136, guid: 4868ea2238fd58d4cafed7bc84ecea4c,
         type: 3}
       propertyPath: m_InnerSpotAngle
-      value: 38
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3337757497555662136, guid: 4868ea2238fd58d4cafed7bc84ecea4c,
         type: 3}
@@ -6689,7 +6694,7 @@ PrefabInstance:
     - target: {fileID: 3337757497555662136, guid: 4868ea2238fd58d4cafed7bc84ecea4c,
         type: 3}
       propertyPath: m_Shadows.m_Strength
-      value: 0.666
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3337757497555662136, guid: 4868ea2238fd58d4cafed7bc84ecea4c,
         type: 3}
@@ -6700,6 +6705,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Shadows.m_NormalBias
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3337757497555662136, guid: 4868ea2238fd58d4cafed7bc84ecea4c,
+        type: 3}
+      propertyPath: m_Shadows.m_Resolution
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3337757497555662136, guid: 4868ea2238fd58d4cafed7bc84ecea4c,
         type: 3}
@@ -7524,7 +7534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f625e7f402a084188d501cb4048fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BotHasMoved: 1
 --- !u!4 &441155904
 Transform:
   m_ObjectHideFlags: 0
@@ -10823,7 +10832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera2D: {fileID: 1918221773}
   cameraIso: {fileID: 354385594}
-  center: {fileID: 949034615}
+  center: {fileID: 1606310711}
   _panZoom: {fileID: 0}
   movingCamera: 0
   speedRotation: 5
@@ -10890,21 +10899,21 @@ Camera:
   serializedVersion: 2
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.043137256, g: 0.043137256, b: 0.043137256, a: 1}
-  m_projectionMatrixMode: 1
+  m_projectionMatrixMode: 2
   m_GateFitMode: 2
-  m_FOVAxisMode: 1
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 31.261068
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
-  near clip plane: 10.01
+  near clip plane: 1.35
   far clip plane: 379.6
-  field of view: 52.149693
+  field of view: 42
   orthographic: 0
   orthographic size: 6.77
   m_Depth: 4.9
@@ -10929,14 +10938,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683450150}
-  m_LocalRotation: {x: 0.28035215, y: 0.3646388, z: -0.11612565, w: 0.8803159}
-  m_LocalPosition: {x: -7, y: 8.6, z: -7}
+  m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
+  m_LocalPosition: {x: -12, y: 12, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 25
-  m_LocalEulerAnglesHint: {x: 35.33, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
 --- !u!114 &683450159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10950,8 +10959,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomSpeed: 111
-  minFOV: 6
-  returnToOriginalDelay: 99
+  minFOV: 1
+  returnToOriginalDelay: 333
   fovTransitionTime: 400
 --- !u!1 &685990001
 GameObject:
@@ -12707,7 +12716,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d67afea850094b14089e8b1e90b51677, type: 2}
+      objectReference: {fileID: 2100000, guid: e0045391554c32947ae1fb770e208c08, type: 2}
     - target: {fileID: 707977673671133687, guid: bc78ebe0a93b2e74f822bff62d00595f,
         type: 3}
       propertyPath: m_RootOrder
@@ -28744,12 +28753,12 @@ GameObject:
   - component: {fileID: 1606310714}
   - component: {fileID: 1606310713}
   m_Layer: 8
-  m_Name: Cubo_2
+  m_Name: Columna central
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1606310712
 Transform:
   m_ObjectHideFlags: 0
@@ -29405,6 +29414,7 @@ MonoBehaviour:
   pieceRotationAcceleration: 3
   CanMove: 0
   BotHasMoved: 0
+  _isChakrukMate: 0
 --- !u!4 &1665154967
 Transform:
   m_ObjectHideFlags: 0
