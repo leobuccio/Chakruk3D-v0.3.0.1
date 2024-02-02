@@ -57,7 +57,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/scenes/Refactorizado.unity
     guid: c3f70201c21392b49a78a3e5f5b0794b
-  - enabled: 1
+  - enabled: 0
     path: Assets/scenes/3Refactorizado3.unity
     guid: 1f1cb8310d040854eb45283e00d35627
   - enabled: 0
@@ -66,7 +66,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/scenes/TORNEO.unity
     guid: d85448e944bdac54987c8b4226b54dc2
-  - enabled: 0
+  - enabled: 1
     path: Assets/scenes/9Refactorizado9.unity
     guid: 512f9cb3580934f428786594f13282e8
   m_configObjects: {}
