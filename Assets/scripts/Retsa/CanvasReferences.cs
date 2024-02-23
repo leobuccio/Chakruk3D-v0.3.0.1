@@ -41,10 +41,10 @@ public class CanvasReferences : MonoBehaviour {
 
     private void Start()
     {
-        btnReset.onClick.AddListener(OnBtnResetScene);
-        btnSurrender.onClick.AddListener(OnBtnSurrender);
-        btnGoToMenu.onClick.AddListener(OnBtnGoToMenu);
-        btnOptions.onClick.AddListener(OnBtnOptions);
+        //btnReset.onClick.AddListener(OnBtnResetScene);
+        //btnSurrender.onClick.AddListener(OnBtnSurrender);
+        //btnGoToMenu.onClick.AddListener(OnBtnGoToMenu);
+        //btnOptions.onClick.AddListener(OnBtnOptions);
     }
 
     public void ChangeCard(Piece piece)
