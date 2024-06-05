@@ -156,7 +156,7 @@ namespace Photon.Pun
             EditorApplication.hierarchyWindowChanged += OnInitialHierarchyChanged;
             #endif
 
-            CompilationPipeline.assemblyCompilationStarted += OnCompileStarted;
+            CompilationPipeline.compilationStarted += OnCompileStarted;
         }
 
         // setup per window
@@ -202,7 +202,7 @@ namespace Photon.Pun
             UpdateRpcList();
         }
 
-        private static void OnCompileStarted(string obj)
+        private static void OnCompileStarted(object obj)
         {
             if (PhotonNetwork.IsConnected)
             {
