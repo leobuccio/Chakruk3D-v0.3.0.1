@@ -2,31 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PieceRey : Piece {
-    public override PieceActionInfo findAvailableCheckers(){
-        base.findAvailableCheckers();
-        int x = findMyX();
-		int y = findMyY();
+public class PieceRey : Piece 
+{
+    private void Awake()
+    {
+        _checkerType = CheckerType.REY;
+    }
+    public override PieceActionInfo FindAvailableCheckers(){
+        base.FindAvailableCheckers();
+        int x = FindMyX();
+		int y = FindMyY();
 
         //Torre, solo 1 casilla contigua
-		newCheckerStack();
-        analyseChecker(x+1, y);
+		NewCheckerStack();
+        AnalyseChecker(x+1, y);
 
-        newCheckerStack();
-		analyseChecker(x-1, y);
+        NewCheckerStack();
+		AnalyseChecker(x-1, y);
 
-        newCheckerStack();
-		analyseChecker(x, y+1);
+        NewCheckerStack();
+		AnalyseChecker(x, y+1);
 
-        newCheckerStack();
-		analyseChecker(x, y-1);
+        NewCheckerStack();
+		AnalyseChecker(x, y-1);
 
         //Alfil, solo 1 casilla contigua
-        newCheckerStack();
-        analyseChecker(x+1, y+1);
+        NewCheckerStack();
+        AnalyseChecker(x+1, y+1);
 
-        newCheckerStack();
-		analyseChecker(x-1, y-1);
+        NewCheckerStack();
+		AnalyseChecker(x-1, y-1);
 
         //newCheckerStack();
 		//analyseChecker(x-1, y+1);

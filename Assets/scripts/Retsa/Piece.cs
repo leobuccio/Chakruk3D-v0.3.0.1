@@ -5,34 +5,29 @@ using UnityEngine;
 public class Piece : MonoBehaviour {
     [SerializeField] protected Team team;
     [SerializeField] public Outline outline;
-    [SerializeField] int pieceID;
+    [SerializeField] protected CheckerType _checkerType;
 
     protected PieceActionInfo result;
 	protected List<Checker> actualList;
     protected int moveCount = 0;
     
 
-    public virtual PieceActionInfo findAvailableCheckers(){
+    public virtual PieceActionInfo FindAvailableCheckers(){
         result = new PieceActionInfo();
         return result;
     }
 
-    public Team GetTeam(){
-        return team;
-    }
+    public Team GetTeam() { return team; }
+    public CheckerType GetCheckerType() { return _checkerType; }
 
-    public int getPieceID() {
-        return pieceID;
-    }
-
-    protected bool analyseChecker(int x, int y){
-		CheckerAvailability cAvailability = CheckBoard.instance.isCheckerAvailable(x, y, team);
+    protected bool AnalyseChecker(int x, int y){
+		CheckerAvailability cAvailability = CheckBoard.Instance.IsCheckerAvailable(x, y, team);
         bool CheckerExists = (cAvailability != CheckerAvailability.nonExistent);
         if (CheckerExists) {
 			if (cAvailability == CheckerAvailability.unavailable)
                 actualList = result.unavailableCheckers;
 
-            actualList.Add(CheckBoard.instance.Checkers[x, y]);
+            actualList.Add(CheckBoard.Instance.Checkers[x, y]);
 
             if (cAvailability == CheckerAvailability.pieceKill)
                 actualList = result.unavailableCheckers;
@@ -41,28 +36,30 @@ public class Piece : MonoBehaviour {
         return CheckerExists;
     }
 
-    protected void analyseMultipleChekers(int x,int y,Vector2Int factor){
+    protected void AnalyseMultipleChekers(int x,int y,Vector2Int factor)
+    {
         int multiplier = 1;
-        while(analyseChecker(
-            x +factor.x*multiplier,
-            y +factor.y*multiplier)){
+        while (AnalyseChecker(
+            x + factor.x * multiplier,
+            y + factor.y * multiplier))
+        {
             multiplier++;
         }
     }
 
-    protected int findMyX(){
+    protected int FindMyX(){
         return GetComponentInParent<Checker>().getXPosition();
     }
 
-    protected int findMyY(){
+    protected int FindMyY(){
         return GetComponentInParent<Checker>().getYPosition();
     }
 
-    protected void newCheckerStack(){
+    protected void NewCheckerStack(){
         actualList = result.availableCheckers;
     }
 
-    public void addMove(){
+    public void AddMove(){
         moveCount++;
     }
 }

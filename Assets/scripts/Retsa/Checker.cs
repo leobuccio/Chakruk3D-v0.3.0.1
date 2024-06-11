@@ -35,7 +35,7 @@ public class Checker : MonoBehaviour {
     }
 
     void OnMouseDown(){
-        Commander.instance.actOnChecker(this);
+        Commander.Instance.ActOnChecker(this);
     }
 
     public bool getCoronacion()

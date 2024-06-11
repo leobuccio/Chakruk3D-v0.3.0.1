@@ -2,37 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PieceReina : Piece {
-    public override PieceActionInfo findAvailableCheckers(){
-        base.findAvailableCheckers();
-        int x = findMyX();
-		int y = findMyY();
+public class PieceReina : Piece 
+{
+    private void Awake()
+    {
+        _checkerType = CheckerType.REINA;
+    }
+    public override PieceActionInfo FindAvailableCheckers(){
+        base.FindAvailableCheckers();
+        int x = FindMyX();
+		int y = FindMyY();
 
         //Torre
-		newCheckerStack();
-        analyseMultipleChekers(x, y, new Vector2Int(1, 0));
+		NewCheckerStack();
+        AnalyseMultipleChekers(x, y, new Vector2Int(1, 0));
 
-        newCheckerStack();
-		analyseMultipleChekers(x, y, new Vector2Int(-1, 0));
+        NewCheckerStack();
+		AnalyseMultipleChekers(x, y, new Vector2Int(-1, 0));
 
-        newCheckerStack();
-		analyseMultipleChekers(x, y, new Vector2Int(0, 1));
+        NewCheckerStack();
+		AnalyseMultipleChekers(x, y, new Vector2Int(0, 1));
 
-        newCheckerStack();
-		analyseMultipleChekers(x, y, new Vector2Int(0, -1));
+        NewCheckerStack();
+		AnalyseMultipleChekers(x, y, new Vector2Int(0, -1));
 
         //Alfil
-        newCheckerStack();
-        analyseMultipleChekers(x, y, new Vector2Int(1, 1));
+        NewCheckerStack();
+        AnalyseMultipleChekers(x, y, new Vector2Int(1, 1));
 
-        newCheckerStack();
-		analyseMultipleChekers(x, y, new Vector2Int(-1, -1));
+        NewCheckerStack();
+		AnalyseMultipleChekers(x, y, new Vector2Int(-1, -1));
 
-        newCheckerStack();
-		analyseMultipleChekers(x, y, new Vector2Int(-1, 1));
+        NewCheckerStack();
+		AnalyseMultipleChekers(x, y, new Vector2Int(-1, 1));
 
-        newCheckerStack();
-		analyseMultipleChekers(x, y, new Vector2Int(1, -1));
+        NewCheckerStack();
+		AnalyseMultipleChekers(x, y, new Vector2Int(1, -1));
 		
         return result;
     }

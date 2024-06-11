@@ -414,7 +414,7 @@ public class tablero : MonoBehaviour {
             //fin ayuda roja doble
 
 
-            bottomCard.GetComponent<moves>().changeSprite(6);
+            //bottomCard.GetComponent<moves>().ChangeSprite(6);
         }
         else
         {
@@ -469,7 +469,7 @@ public class tablero : MonoBehaviour {
                 }
             }
             //fin ayuda roja doble
-            topCard.GetComponent<moves>().changeSprite(6);
+            //topCard.GetComponent<moves>().ChangeSprite(6);
 
         }
     }
@@ -599,11 +599,11 @@ public class tablero : MonoBehaviour {
 
         if (piezaSostenida.gameObject.transform.parent.name == "PiezasAbajo")
         {
-            bottomCard.GetComponent<moves>().changeSprite(5);
+            //bottomCard.GetComponent<moves>().ChangeSprite(5);
         }
         else
         {
-            topCard.GetComponent<moves>().changeSprite(5);
+            //topCard.GetComponent<moves>().ChangeSprite(5);
         }
     }
 
@@ -663,11 +663,11 @@ public class tablero : MonoBehaviour {
 
         if (piezaSostenida.gameObject.transform.parent.name == "PiezasAbajo")
         {
-            bottomCard.GetComponent<moves>().changeSprite(4);
+            //bottomCard.GetComponent<moves>().ChangeSprite(4);
         }
         else
         {
-            topCard.GetComponent<moves>().changeSprite(4);
+            //topCard.GetComponent<moves>().ChangeSprite(4);
         }
     }
     private void Torre(int a, int b)
@@ -796,11 +796,11 @@ public class tablero : MonoBehaviour {
         // fin ayuda roja
         if (piezaSostenida.gameObject.transform.parent.name == "PiezasAbajo")
         {
-            bottomCard.GetComponent<moves>().changeSprite(3);
+            //bottomCard.GetComponent<moves>().ChangeSprite(3);
         }
         else
         {
-            topCard.GetComponent<moves>().changeSprite(3);
+            //topCard.GetComponent<moves>().ChangeSprite(3);
         }
     }
     private void Rey(int a, int b)
@@ -860,11 +860,11 @@ public class tablero : MonoBehaviour {
 
         if (piezaSostenida.gameObject.transform.parent.name == "PiezasAbajo")
         {
-            bottomCard.GetComponent<moves>().changeSprite(2);
+            //bottomCard.GetComponent<moves>().ChangeSprite(2);
         }
         else
         {
-            topCard.GetComponent<moves>().changeSprite(2);
+            //topCard.GetComponent<moves>().ChangeSprite(2);
         }
     }
     private void Reina(int a, int b)
@@ -873,11 +873,11 @@ public class tablero : MonoBehaviour {
         Alfil(a, b);
         if (piezaSostenida.gameObject.transform.parent.name == "PiezasAbajo")
         {
-            bottomCard.GetComponent<moves>().changeSprite(1);
+            //bottomCard.GetComponent<moves>().ChangeSprite(1);
         }
         else
         {
-            topCard.GetComponent<moves>().changeSprite(1);
+            //topCard.GetComponent<moves>().ChangeSprite(1);
         }
     }
     private bool CheckCheck()

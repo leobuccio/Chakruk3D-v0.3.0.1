@@ -1,28 +1,38 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckBoard : MonoBehaviour {
-    const int size = 11;
-    public static CheckBoard instance;
+public class CheckBoard : MonoBehaviour 
+{
+    public static CheckBoard Instance;
 
+    const int size = 11;
     public Checker[,] Checkers = new Checker[size,size];
 
-    void Awake(){
-        instance = this;
+    private void Awake()
+    {
+        if (!Instance)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    void Start()
+    {
+        AddCheckers();
     }
 
-	void Start(){
-        addCheckers();
-    }
-
-	private void addCheckers(){
+	private void AddCheckers()
+    {
 		foreach (var c in GetComponentsInChildren<Checker>())
 		{
             Checkers[c.getXPosition(), c.getYPosition()] = c;
         }
 	}
 
-	public CheckerAvailability isCheckerAvailable(int x, int y, Team team){
+	public CheckerAvailability IsCheckerAvailable(int x, int y, Team team){
 		if (x<0 || y<0)
             return CheckerAvailability.nonExistent;
 		else if (x>=size || y>=size)
@@ -37,7 +47,8 @@ public class CheckBoard : MonoBehaviour {
             return CheckerAvailability.unavailable;
     }
 
-	public void turnOffAllCheckers(){
+	public void TurnOffAllCheckers()
+    {
 		foreach (var c in GetComponentsInChildren<Checker>())
 		{
             c.turnOffGreenHighlight();
@@ -45,7 +56,7 @@ public class CheckBoard : MonoBehaviour {
         }
 	}
 
-    public List<Piece> getPiecesByTeam(Team team)
+    public List<Piece> GetPiecesByTeam(Team team)
     {
         List<Piece> result = new List<Piece>();
 

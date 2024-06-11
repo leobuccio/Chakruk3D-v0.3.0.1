@@ -2,20 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PieceCaballo : Piece {
-    public override PieceActionInfo findAvailableCheckers(){
-        base.findAvailableCheckers();
-        int x = findMyX();
-		int y = findMyY();
+public class PieceCaballo : Piece 
+{
+    private void Awake()
+    {
+        _checkerType = CheckerType.CABALLO;
+    }
+    public override PieceActionInfo FindAvailableCheckers(){
+        base.FindAvailableCheckers();
+        int x = FindMyX();
+		int y = FindMyY();
 
         //Arriba
-        newCheckerStack();
-        analyseChecker(x-1, y+1);
-		newCheckerStack();
-        analyseChecker(x-2, y-1);
-        newCheckerStack();
-        analyseChecker(x+1, y+2);
-        newCheckerStack();
+        NewCheckerStack();
+        AnalyseChecker(x-1, y+1);
+		NewCheckerStack();
+        AnalyseChecker(x-2, y-1);
+        NewCheckerStack();
+        AnalyseChecker(x+1, y+2);
+        NewCheckerStack();
         //analyseChecker(x+2, y+4);
         //newCheckerStack();
         //analyseChecker(x-4, y-2);
@@ -28,12 +33,12 @@ public class PieceCaballo : Piece {
         
 
         //Abajo
-        newCheckerStack();
-        analyseChecker(x+1, y-1);
-        newCheckerStack();
-        analyseChecker(x+2, y+1);
-        newCheckerStack();
-        analyseChecker(x-1, y-2);
+        NewCheckerStack();
+        AnalyseChecker(x+1, y-1);
+        NewCheckerStack();
+        AnalyseChecker(x+2, y+1);
+        NewCheckerStack();
+        AnalyseChecker(x-1, y-2);
         //newCheckerStack();
         //analyseChecker(x-2, y-4);
         //newCheckerStack();

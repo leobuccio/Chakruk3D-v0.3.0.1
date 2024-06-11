@@ -7,5 +7,4 @@ public enum CheckerAvailability {
 	unavailable = 1,
 	available = 2, 
 	pieceKill = 3
-
 }

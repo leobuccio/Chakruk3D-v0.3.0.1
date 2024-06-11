@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class QueenPrefabs : MonoBehaviour
 {
-    public static QueenPrefabs instance;
+    public static QueenPrefabs Instance;
 
     [SerializeField] GameObject[] queens;
 
     private void Awake()
     {
-        instance = this;    
+        Instance = this;    
     }
 
     public GameObject[] getQueens()

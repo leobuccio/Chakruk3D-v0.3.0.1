@@ -27,12 +27,12 @@ public class UIMainMenu : MonoBehaviour
     }
 
     public void StartLocal() {
-        MultiplayerManager.instance.StartLocalGame();
+        MultiplayerManager.Instance.StartLocalGame();
     }
 
     public void StartMultiplayer() {
         txtState.text = "Searching for players...";
-        MultiplayerManager.instance.JoinRandomRoom();
+        MultiplayerManager.Instance.JoinRandomRoom();
     }
 
     void OnConnectedToPhoton()

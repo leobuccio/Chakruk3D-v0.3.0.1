@@ -3,6 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum Team{
-	Humanos = 0,
-	Maquinas = 1
+	HUMANOS = 0,
+	MAQUINAS = 1
 }

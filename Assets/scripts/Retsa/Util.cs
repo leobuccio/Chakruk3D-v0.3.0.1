@@ -3,10 +3,10 @@
 public static class Util{
 
 	public static Team getOppositeTeam(Team team){
-		if (team==Team.Humanos)
-            return Team.Maquinas;
+		if (team==Team.HUMANOS)
+            return Team.MAQUINAS;
         else
-            return Team.Humanos;
+            return Team.HUMANOS;
 	}
 
 	public static bool isMoveIllegal(Piece piece, Checker checker){
@@ -17,7 +17,7 @@ public static class Util{
         if (killedPiece)
             killedPiece.transform.SetParent(null);
         
-        if (isTeamInChakruk(piece.GetTeam())){
+        if (IsTeamInChakruk(piece.GetTeam())){
             result = true;
         }
         else{
@@ -32,9 +32,9 @@ public static class Util{
         return result;
     }
 
-    public static bool isTeamInChakruk(Team team){
+    public static bool IsTeamInChakruk(Team team){
         PieceRey pieceRey = null;
-        foreach (var rey in CheckBoard.instance.GetComponentsInChildren<PieceRey>())
+        foreach (var rey in CheckBoard.Instance.GetComponentsInChildren<PieceRey>())
         {
             if (rey.GetTeam()==team){
                 pieceRey = rey;
@@ -54,11 +54,11 @@ public static class Util{
 
 	public static List<Checker> getAllTeamPossibleMovements(Team team){
         List<Checker> result = new List<Checker>();
-        foreach (var piece in CheckBoard.instance.GetComponentsInChildren<Piece>())
+        foreach (var piece in CheckBoard.Instance.GetComponentsInChildren<Piece>())
         {
             if (piece.GetTeam()!=team)
                 continue;
-            result.AddRange(piece.findAvailableCheckers().availableCheckers);
+            result.AddRange(piece.FindAvailableCheckers().availableCheckers);
         }
         return result;
     }

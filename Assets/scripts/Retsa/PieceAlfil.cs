@@ -2,23 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PieceAlfil : Piece {
-    public override PieceActionInfo findAvailableCheckers(){
-        base.findAvailableCheckers();
-        int x = findMyX();
-		int y = findMyY();
+public class PieceAlfil : Piece 
+{
+    private void Awake()
+    {
+        _checkerType = CheckerType.ALFIL;
+    }
+    public override PieceActionInfo FindAvailableCheckers(){
+        base.FindAvailableCheckers();
+        int x = FindMyX();
+		int y = FindMyY();
 
-		newCheckerStack();
-        analyseMultipleChekers(x, y, new Vector2Int(1, 1));
+		NewCheckerStack();
+        AnalyseMultipleChekers(x, y, new Vector2Int(1, 1));
 
-        newCheckerStack();
-		analyseMultipleChekers(x, y, new Vector2Int(-1, -1));
+        NewCheckerStack();
+		AnalyseMultipleChekers(x, y, new Vector2Int(-1, -1));
 
-        newCheckerStack();
-		analyseMultipleChekers(x, y, new Vector2Int(-1, 1));
+        NewCheckerStack();
+		AnalyseMultipleChekers(x, y, new Vector2Int(-1, 1));
 
-        newCheckerStack();
-		analyseMultipleChekers(x, y, new Vector2Int(1, -1));
+        NewCheckerStack();
+		AnalyseMultipleChekers(x, y, new Vector2Int(1, -1));
 		
         return result;
     }

@@ -2,23 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PieceTorre : Piece {
-    public override PieceActionInfo findAvailableCheckers(){
-        base.findAvailableCheckers();
-        int x = findMyX();
-		int y = findMyY();
+public class PieceTorre : Piece 
+{
+    private void Awake()
+    {
+        _checkerType = CheckerType.TORRE;
+    }
+    public override PieceActionInfo FindAvailableCheckers(){
+        base.FindAvailableCheckers();
+        int x = FindMyX();
+		int y = FindMyY();
 
-		newCheckerStack();
-        analyseMultipleChekers(x, y, new Vector2Int(1, 0));
+		NewCheckerStack();
+        AnalyseMultipleChekers(x, y, new Vector2Int(1, 0));
 
-        newCheckerStack();
-		analyseMultipleChekers(x, y, new Vector2Int(-1, 0));
+        NewCheckerStack();
+		AnalyseMultipleChekers(x, y, new Vector2Int(-1, 0));
 
-        newCheckerStack();
-		analyseMultipleChekers(x, y, new Vector2Int(0, 1));
+        NewCheckerStack();
+		AnalyseMultipleChekers(x, y, new Vector2Int(0, 1));
 
-        newCheckerStack();
-		analyseMultipleChekers(x, y, new Vector2Int(0, -1));
+        NewCheckerStack();
+		AnalyseMultipleChekers(x, y, new Vector2Int(0, -1));
 		
         return result;
     }

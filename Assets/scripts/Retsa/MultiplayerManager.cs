@@ -1,5 +1,6 @@
 ﻿using Photon.Pun;
 using Photon.Realtime;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,48 +8,44 @@ using UnityEngine.SceneManagement;
 
 public class MultiplayerManager : MonoBehaviourPunCallbacks
 {
-    public static MultiplayerManager instance;
+    public static MultiplayerManager Instance;
     public enum Mode {Local,Online};
 
     [Header("Properties")]
-    [SerializeField] Team localTeam;
-    [SerializeField] Mode mode;
+    [SerializeField] private Team _localTeam;
+    [SerializeField] private Mode _mode;
 
     [Header("References")]
-    [SerializeField] PhotonView PV;
+    [SerializeField] private PhotonView PV;
 
-    public static System.Action OnConnectedToPhoton = ()=> { };
-    public static System.Action OnRoomCreated = () => { };
-    public static System.Action OnPlayerFound = () => { };
-    public static System.Action OnPlayerDisconnected = () => { };
-    public static System.Action OnDisconnectedFromServer = () => { };
-    public static System.Action OnLoadingScene = () => { };
+    public static Action OnConnectedToPhoton = ()=> { };
+    public static Action OnRoomCreated = () => { };
+    public static Action OnPlayerFound = () => { };
+    public static Action OnPlayerDisconnected = () => { };
+    public static Action OnDisconnectedFromServer = () => { };
+    public static Action OnLoadingScene = () => { };
 
 
-    void Awake()
+    private void Awake()
     {
-        if (instance && instance != this)
-            Destroy(gameObject);
-        else
-            instance = this;
+        if (!Instance)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
 
         DontDestroyOnLoad(gameObject);
     }
-    
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void StartLocalGame()
     {
-        mode = Mode.Local;
+        _mode = Mode.Local;
         //SceneManager.LoadScene(1);
         StartCoroutine(LoadScene(1));
     }
@@ -63,14 +60,14 @@ public class MultiplayerManager : MonoBehaviourPunCallbacks
 
     public void JoinRandomRoom()
     {
-        mode = Mode.Online;
+        _mode = Mode.Online;
 
         PhotonNetwork.JoinRandomRoom();
     }
 
     void CreateRoom()
     {
-        int randomRoomName = Random.Range(0, 99999);
+        int randomRoomName = UnityEngine.Random.Range(0, 99999);
         RoomOptions roomOptions = new RoomOptions()
         {
             IsVisible = true,
@@ -114,7 +111,7 @@ public class MultiplayerManager : MonoBehaviourPunCallbacks
         {
             OnPlayerFound();
             PhotonNetwork.CurrentRoom.IsOpen = false;
-            PV.RPC("RpcStartGame", RpcTarget.All);
+            PV.RPC(nameof(RpcStartGame), RpcTarget.All);
         }
 
         
@@ -134,14 +131,14 @@ public class MultiplayerManager : MonoBehaviourPunCallbacks
         OnDisconnectedFromServer();
     }
 
-    public Mode getMode()
+    public Mode GetMode()
     {
-        return mode;
+        return _mode;
     }
 
-    public Team getLocalTeam()
+    public Team GetLocalTeam()
     {
-        return localTeam;
+        return _localTeam;
     }
 
     public void MovePieceOnline(Piece piece, Checker checker)
@@ -149,14 +146,14 @@ public class MultiplayerManager : MonoBehaviourPunCallbacks
         Checker pieceChecker = piece.GetComponentInParent<Checker>();
         Vector2Int PieceCoordinate = new Vector2Int(pieceChecker.getXPosition(),pieceChecker.getYPosition());
         Vector2Int checkerCoordinate = new Vector2Int(checker.getXPosition(), checker.getYPosition());
-        PV.RPC("RpcMovePiece", RpcTarget.Others, PieceCoordinate.x, PieceCoordinate.y, checkerCoordinate.x, checkerCoordinate.y);
+        PV.RPC(nameof(RpcMovePiece), RpcTarget.Others, PieceCoordinate.x, PieceCoordinate.y, checkerCoordinate.x, checkerCoordinate.y);
     }
 
-    public void changeCardOnline(Piece piece)
+    public void ChangeCardOnline(Piece piece)
     {
         Checker pieceChecker = piece.GetComponentInParent<Checker>();
         Vector2Int PieceCoordinate = new Vector2Int(pieceChecker.getXPosition(), pieceChecker.getYPosition());
-        PV.RPC("RpcChangeCard", RpcTarget.Others, PieceCoordinate.x, PieceCoordinate.y);
+        PV.RPC(nameof(RpcChangeCard), RpcTarget.Others, PieceCoordinate.x, PieceCoordinate.y);
     }
 
     IEnumerator LoadScene(int sceneIndex)
@@ -172,13 +169,13 @@ public class MultiplayerManager : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    void RpcStartGame()
+    private void RpcStartGame()
     {
         foreach (var p in PhotonNetwork.PlayerList)
         {
             Debug.Log("Player:" + p + " isLocal: " + p.IsLocal + " ActorNumber: " + p.ActorNumber);
             if (p.IsLocal)
-                localTeam = (Team)p.ActorNumber - 1;
+                _localTeam = (Team)p.ActorNumber - 1;
         }
 
         //SceneManager.LoadScene(1);
@@ -186,21 +183,21 @@ public class MultiplayerManager : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    void RpcMovePiece(int PieceX, int PieceY, int CheckerX, int CheckerY)
+    private void RpcMovePiece(int PieceX, int PieceY, int CheckerX, int CheckerY)
     {
         Debug.Log("RPC MOVE PIECE!");
-        Piece piece = CheckBoard.instance.Checkers[PieceX, PieceY].GetComponentInChildren<Piece>();
-        Checker checker = CheckBoard.instance.Checkers[CheckerX, CheckerY];
+        Piece piece = CheckBoard.Instance.Checkers[PieceX, PieceY].GetComponentInChildren<Piece>();
+        Checker checker = CheckBoard.Instance.Checkers[CheckerX, CheckerY];
         Debug.Log("Piece",piece);
         Debug.Log("Checker", checker);
-        Commander.instance.movePiece(piece, checker);
+        Commander.Instance.MovePiece(piece, checker);
     }
 
     [PunRPC]
-    void RpcChangeCard(int CheckerX, int CheckerY)
+    private void RpcChangeCard(int CheckerX, int CheckerY)
     {
         Debug.Log("RPC Change Card!");
-        Piece piece = CheckBoard.instance.Checkers[CheckerX, CheckerY].GetComponentInChildren<Piece>();
-        CanvasReferences.instance.ChangeCard(piece);
+        Piece piece = CheckBoard.Instance.Checkers[CheckerX, CheckerY].GetComponentInChildren<Piece>();
+        CanvasReferences.Instance.ChangeCard(piece);
     }
 }
